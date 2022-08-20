@@ -1,6 +1,6 @@
 # Anthropometric Measurement Estimation using OpenPose Algorithm
 
-![teaser figure](figures/teaser.png)
+![teaser figure](images/teaser.png)
 **Anthropometric measurement estimation algorithm:** From left to right--original image of patient; undistorted image; keypoint estimation using OpenPose; anthropometric measurements (projections). </p> 
 
 <br/>

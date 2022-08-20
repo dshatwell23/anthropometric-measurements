@@ -5,7 +5,7 @@
 
 <br/>
 
-This repository contains the code for an anthropometric measurement estimation algorithm using the OpenPose model developed by CMU Perceptual Computing Lab. The algorithm estimates the neck, torax, abdomen and waist measurement projections of male patients using single frontal images. Future work will focus on developing regression models to estimate the circunference of the selected areas based on the frontal projections. The circunferences, and even the projections, can be used by medical doctors in occupational health clinics to evaluate the patient's capability on performing certain jobs.
+This repository contains the code for an anthropometric measurement estimation algorithm using the OpenPose model developed by CMU Perceptual Computing Lab. The algorithm estimates the neck, thorax, abdomen and waist measurement projections of male patients using single frontal images. Future work will focus on developing regression models to estimate the circunference of the selected areas based on the frontal projections. The circunferences, and even the projections, can be used by medical doctors in occupational health clinics to evaluate the patient's capability on performing certain jobs.
 
 ## Description
 
@@ -23,7 +23,7 @@ An image acquisition protocol is used to standardize all images. The camera is l
 
 ### 3. Algorithm
 
-The algorithm estimates five anthropometric measurements: (1) neck, (2) torax, (3) abdomen, (4) waist and (5) hips. In order to accomplish this, the algorithm uses six stages:
+The algorithm estimates five anthropometric measurements: (1) neck, (2) thorax, (3) abdomen, (4) waist and (5) hips. In order to accomplish this, the algorithm uses six stages:
 
 ![algorithm](images/algorithm.png)
 
@@ -39,8 +39,23 @@ The algorithm identifies the patients, keypoints using MCU Perceptual Computing 
 
 #### 3.3. Keypoint validation
 
-The OpenPose model is trained on two datasets: MPII and COCO. In this project we use both in order to improve the accuracy of the algorithm. For example, if one of the model trained with one dataset is not able to identify one of the body parts, the other one can be used as a substitute.
+The OpenPose model is trained on two datasets: MPII and COCO. In this project we use both in order to improve the keypoint detection accuracy of the algorithm. For example, if one of the model trained with one dataset is not able to identify one of the body parts, the other one can be used as a substitute.
 
 ![models](images/coco_vs_mpii.png)
 
-#### 3.4. Anthropometric projections
+#### 3.4. Neck, thorax, abdomen, waist and hips search
+
+The neck, thorax, abdomen, wait and hip keypoints are computed from other keypoints found by the OpenPose model. The formulas and methods for finding these new keypoints are presented in the code.
+
+![keypoints](images/keypoints_defaced.png)
+
+#### 3.5. Anthropometric projections
+
+Finally, the anthropometric projections are estimated by projecting the neck, thorax, abdomen, waist and hips keypoints horizontally in the binary mask until a sudden change in pixel intensity is found. The two pixel locations where the intensity change is detected represent the complete length of the anthropometric projection corresponding to one of the keypoints. Additional processing is done in order to correct the measurement in edge cases.
+
+![keypoints](images/projections_defaced.png)
+<img src="projections_defaced.png" alt="projections_defaced" height="100"/>
+
+#### 3.6. Future work: Regression
+
+In the future, a regression model could be used to estimate the perimeter of the different body parts from the projections. In order to train the model, more anthropometric data should be acquired, as well as patient images.

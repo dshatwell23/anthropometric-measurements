@@ -53,8 +53,7 @@ The neck, thorax, abdomen, wait and hip keypoints are computed from other keypoi
 
 Finally, the anthropometric projections are estimated by projecting the neck, thorax, abdomen, waist and hips keypoints horizontally in the binary mask until a sudden change in pixel intensity is found. The two pixel locations where the intensity change is detected represent the complete length of the anthropometric projection corresponding to one of the keypoints. Additional processing is done in order to correct the measurement in edge cases.
 
-![keypoints](images/projections_defaced.png)
-<img src="projections_defaced.png" alt="projections_defaced" height="100"/>
+<img src="projections_defaced.png" alt="projections" height="100"/>
 
 #### 3.6. Future work: Regression
 

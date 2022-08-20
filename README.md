@@ -19,7 +19,7 @@ The anthropometric measurement system consists of a camera that acquires images 
 
 An image acquisition protocol is used to standardize all images. The camera is located at a distance of 1.27 meters from the ground and perpendicularly at a distance of 1 meter from the patient. The patient must remove his shirt and extend his arms at an angle of 45 degrees with respect to the torso. The acquisition system then acquires a frontal image of the patient.
 
-<img src="images/acquisition.png" alt="acquisition" height="300"/>
+<img src="images/acquisition.png" alt="acquisition" height="200"/>
 
 ### 3. Algorithm
 

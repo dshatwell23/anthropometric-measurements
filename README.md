@@ -19,7 +19,7 @@ The anthropometric measurement system consists of a camera that acquires images 
 
 An image acquisition protocol is used to standardize all images. The camera is located at a distance of 1.27 meters from the ground and perpendicularly at a distance of 1 meter from the patient. The patient must remove his shirt and extend his arms at an angle of 45 degrees with respect to the torso. The acquisition system then acquires a frontal image of the patient.
 
-![acquisition](images/acquisition.png)
+<img src="images/acquisition.png" alt="acquisition" height="300"/>
 
 ### 3. Algorithm
 
@@ -31,7 +31,7 @@ The algorithm estimates five anthropometric measurements: (1) neck, (2) thorax, 
 
 The patient's body is segmented using color thresholding in the HSV color space. Then, the mahalanobis distance is used to isolate the patient's color skin, eliminating the background and creating a binary mask. The mask is then refined by applying morphology operations.
 
-![segmentation](images/segmentation.png)
+<img src="images/segmentation.png" alt="segmentation" height="300"/>
 
 #### 3.2. Keypoint identification
 
@@ -41,13 +41,13 @@ The algorithm identifies the patients, keypoints using MCU Perceptual Computing 
 
 The OpenPose model is trained on two datasets: MPII and COCO. In this project we use both in order to improve the keypoint detection accuracy of the algorithm. For example, if one of the model trained with one dataset is not able to identify one of the body parts, the other one can be used as a substitute.
 
-![models](images/coco_vs_mpii.png)
+<img src="images/coco_vs_mpii.png" alt="models" height="300"/>
 
 #### 3.4. Neck, thorax, abdomen, waist and hips search
 
 The neck, thorax, abdomen, wait and hip keypoints are computed from other keypoints found by the OpenPose model. The formulas and methods for finding these new keypoints are presented in the code.
 
-![keypoints](images/keypoints_defaced.png)
+<img src="images/keypoints_defaced.png" alt="keypoints" height="300"/>
 
 #### 3.5. Anthropometric projections
 

@@ -5,7 +5,7 @@
 
 <br/>
 
-This repository contains the code for an anthropometric measurement estimation algorithm using the OpenPose model developed by CMU Perceptual Computing Lab. The algorithm estimates the neck, thorax, abdomen and waist measurement projections of male patients using single frontal images. Future work will focus on developing regression models to estimate the circunference of the selected areas based on the frontal projections. The circunferences, and even the projections, can be used by medical doctors in occupational health clinics to evaluate the patient's capability on performing certain jobs.
+This repository contains the code for an anthropometric measurement estimation algorithm using the OpenPose model developed by CMU Perceptual Computing Lab. This project was developed in collaboration with the Work & Health occupation clinic. The algorithm estimates the neck, thorax, abdomen and waist measurement projections of male patients using single frontal images. Future work will focus on developing regression models to estimate the circunference of the selected areas based on the frontal projections. The circunferences, and even the projections, can be used by medical doctors in occupational health clinics to evaluate the patient's capability on performing certain jobs.
 
 ## Description
 
